@@ -28686,11 +28686,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            value: 1,
+            input: 0,
+            output: 1,
             type: 'deg',
             calc: 'sin'
         };
@@ -28723,25 +28745,110 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "field" }, [
-        _c("label", { attrs: { for: "ctrl_value" } }, [_vm._v("Input:")]),
+        _c("label", { attrs: { for: "ctrl_input" } }, [_vm._v("Input:")]),
         _vm._v(" "),
         _c("input", {
           directives: [
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.value,
-              expression: "value"
+              value: _vm.input,
+              expression: "input"
             }
           ],
-          attrs: { type: "number", id: "ctrl_value" },
-          domProps: { value: _vm.value },
+          attrs: { type: "number", id: "ctrl_input" },
+          domProps: { value: _vm.input },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.value = $event.target.value
+              _vm.input = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "inline fields" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("div", { staticClass: "ui radio checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.type,
+                  expression: "type"
+                }
+              ],
+              attrs: {
+                id: "ctrl_type_deg",
+                name: "type",
+                value: "deg",
+                type: "radio"
+              },
+              domProps: { checked: _vm._q(_vm.type, "deg") },
+              on: {
+                change: function($event) {
+                  _vm.type = "deg"
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "ctrl_type_deg" } }, [_vm._v("Apples")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("div", { staticClass: "ui radio checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.type,
+                  expression: "type"
+                }
+              ],
+              attrs: {
+                id: "ctrl_type_rad",
+                name: "type",
+                value: "rad",
+                type: "radio"
+              },
+              domProps: { checked: _vm._q(_vm.type, "rad") },
+              on: {
+                change: function($event) {
+                  _vm.type = "rad"
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "ctrl_type_rad" } }, [_vm._v("Apples")])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { attrs: { for: "ctrl_output" } }, [_vm._v("Output:")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.output,
+              expression: "output"
+            }
+          ],
+          attrs: { type: "number", id: "ctrl_output" },
+          domProps: { value: _vm.output },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.output = $event.target.value
             }
           }
         })

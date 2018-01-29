@@ -28707,12 +28707,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             input: 0,
-            output: 1,
+            output: 0,
             type: 'deg',
             calc: 'sin'
         };
@@ -28720,7 +28747,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     methods: {
-        calculate: function calculate() {}
+        calculate: function calculate() {
+            var v = void 0,
+                o = void 0;
+
+            if (this.type === 'deg') {
+                v = this.input * 180;
+            } else {
+                v = this.input;
+            }
+
+            switch (this.calc) {
+                case 'sin':
+                    o = Math.sin(v);
+                    break;
+
+                case 'cos':
+                    o = Math.cos(v);
+                    break;
+
+                case 'tan':
+                    o = Math.tan(v);
+                    break;
+            }
+
+            this.output = o;
+        }
+    },
+
+    created: function created() {
+        this.calculate();
     }
 });
 
@@ -28770,6 +28826,8 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "inline fields" }, [
+        _c("label", [_vm._v("Input is in:")]),
+        _vm._v(" "),
         _c("div", { staticClass: "field" }, [
           _c("div", { staticClass: "ui radio checkbox" }, [
             _c("input", {
@@ -28789,13 +28847,18 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.type, "deg") },
               on: {
-                change: function($event) {
-                  _vm.type = "deg"
-                }
+                change: [
+                  function($event) {
+                    _vm.type = "deg"
+                  },
+                  _vm.calculate
+                ]
               }
             }),
             _vm._v(" "),
-            _c("label", { attrs: { for: "ctrl_type_deg" } }, [_vm._v("Apples")])
+            _c("label", { attrs: { for: "ctrl_type_deg" } }, [
+              _vm._v("degrees")
+            ])
           ])
         ]),
         _vm._v(" "),
@@ -28818,13 +28881,118 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.type, "rad") },
               on: {
-                change: function($event) {
-                  _vm.type = "rad"
-                }
+                change: [
+                  function($event) {
+                    _vm.type = "rad"
+                  },
+                  _vm.calculate
+                ]
               }
             }),
             _vm._v(" "),
-            _c("label", { attrs: { for: "ctrl_type_rad" } }, [_vm._v("Apples")])
+            _c("label", { attrs: { for: "ctrl_type_rad" } }, [
+              _vm._v("radians")
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "inline fields" }, [
+        _c("label", [_vm._v("Calculate:")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("div", { staticClass: "ui radio checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.calc,
+                  expression: "calc"
+                }
+              ],
+              attrs: {
+                id: "ctrl_calc_sin",
+                name: "type",
+                value: "sin",
+                type: "radio"
+              },
+              domProps: { checked: _vm._q(_vm.calc, "sin") },
+              on: {
+                change: [
+                  function($event) {
+                    _vm.calc = "sin"
+                  },
+                  _vm.calculate
+                ]
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "ctrl_calc_sin" } }, [_vm._v("sin")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("div", { staticClass: "ui radio checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.calc,
+                  expression: "calc"
+                }
+              ],
+              attrs: {
+                id: "ctrl_calc_cos",
+                name: "type",
+                value: "cos",
+                type: "radio"
+              },
+              domProps: { checked: _vm._q(_vm.calc, "cos") },
+              on: {
+                change: [
+                  function($event) {
+                    _vm.calc = "cos"
+                  },
+                  _vm.calculate
+                ]
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "ctrl_calc_cos" } }, [_vm._v("cos")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("div", { staticClass: "ui radio checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.calc,
+                  expression: "calc"
+                }
+              ],
+              attrs: {
+                id: "ctrl_calc_tan",
+                name: "type",
+                value: "tan",
+                type: "radio"
+              },
+              domProps: { checked: _vm._q(_vm.calc, "tan") },
+              on: {
+                change: [
+                  function($event) {
+                    _vm.calc = "tan"
+                  },
+                  _vm.calculate
+                ]
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "ctrl_calc_tan" } }, [_vm._v("tan")])
           ])
         ])
       ]),
@@ -28841,7 +29009,7 @@ var render = function() {
               expression: "output"
             }
           ],
-          attrs: { type: "number", id: "ctrl_output" },
+          attrs: { type: "number", readonly: "", id: "ctrl_output" },
           domProps: { value: _vm.output },
           on: {
             input: function($event) {

@@ -16,6 +16,19 @@
   display: block;
 }
 
+.app.wrapper .wrapper.inner h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.app.wrapper .wrapper.inner form {
+  padding: 20px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.2);
+}
+
 .app.wrapper .wrapper.inner calculator {
   display: block;
   width: 100%;

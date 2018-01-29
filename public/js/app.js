@@ -28734,8 +28734,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -28980,10 +28978,6 @@ var render = function() {
             _c("label", { attrs: { for: "ctrl_calc_tan" } }, [_vm._v("tan")])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "ui fluid green button" }, [
-        _vm._v("Calculate!")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "field" }, [

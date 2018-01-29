@@ -48,8 +48,6 @@
             </div>
         </div>
 
-        <button class="ui fluid green button">Calculate!</button>
-
         <div class="field">
             <label for="ctrl_output">Output:</label>
             <input type="number" v-model="output" readonly id="ctrl_output">

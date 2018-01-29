@@ -28753,7 +28753,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 o = 0;
 
             if (this.type === 'deg') {
-                v = this.input / 180;
+                v = this.input / 180 * Math.PI;
             } else {
                 v = this.input;
             }

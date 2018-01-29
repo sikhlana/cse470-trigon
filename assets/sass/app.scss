@@ -1,0 +1,11 @@
+.app.wrapper
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper.inner
+  {
+    display: block;
+  }
+}

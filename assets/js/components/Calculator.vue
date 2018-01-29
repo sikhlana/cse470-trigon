@@ -28,25 +28,27 @@
 
             <div class="field">
                 <div class="ui radio checkbox">
-                    <input id="ctrl_calc_sin" name="type" v-model="calc" value="sin" type="radio" @change="calculate">
+                    <input id="ctrl_calc_sin" name="calc" v-model="calc" value="sin" type="radio" @change="calculate">
                     <label for="ctrl_calc_sin">sin</label>
                 </div>
             </div>
 
             <div class="field">
                 <div class="ui radio checkbox">
-                    <input id="ctrl_calc_cos" name="type" v-model="calc" value="cos" type="radio" @change="calculate">
+                    <input id="ctrl_calc_cos" name="calc" v-model="calc" value="cos" type="radio" @change="calculate">
                     <label for="ctrl_calc_cos">cos</label>
                 </div>
             </div>
 
             <div class="field">
                 <div class="ui radio checkbox">
-                    <input id="ctrl_calc_tan" name="type" v-model="calc" value="tan" type="radio" @change="calculate">
+                    <input id="ctrl_calc_tan" name="calc" v-model="calc" value="tan" type="radio" @change="calculate">
                     <label for="ctrl_calc_tan">tan</label>
                 </div>
             </div>
         </div>
+
+        <button class="ui fluid green button">Calculate!</button>
 
         <div class="field">
             <label for="ctrl_output">Output:</label>

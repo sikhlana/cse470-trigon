@@ -28741,17 +28741,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             input: 0,
-            output: 0,
             type: 'deg',
             calc: 'sin'
         };
     },
 
 
-    methods: {
-        calculate: function calculate() {
+    computed: {
+        output: function output() {
             var v = void 0,
-                o = void 0;
+                o = 0;
 
             if (this.type === 'deg') {
                 v = this.input * 180;
@@ -28773,7 +28772,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     break;
             }
 
-            this.output = o;
+            return o;
         }
     },
 
@@ -28797,7 +28796,6 @@ var render = function() {
       on: {
         submit: function($event) {
           $event.preventDefault()
-          _vm.calculate($event)
         }
       }
     },
@@ -28849,12 +28847,9 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.type, "deg") },
               on: {
-                change: [
-                  function($event) {
-                    _vm.type = "deg"
-                  },
-                  _vm.calculate
-                ]
+                change: function($event) {
+                  _vm.type = "deg"
+                }
               }
             }),
             _vm._v(" "),
@@ -28883,12 +28878,9 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.type, "rad") },
               on: {
-                change: [
-                  function($event) {
-                    _vm.type = "rad"
-                  },
-                  _vm.calculate
-                ]
+                change: function($event) {
+                  _vm.type = "rad"
+                }
               }
             }),
             _vm._v(" "),
@@ -28921,12 +28913,9 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.calc, "sin") },
               on: {
-                change: [
-                  function($event) {
-                    _vm.calc = "sin"
-                  },
-                  _vm.calculate
-                ]
+                change: function($event) {
+                  _vm.calc = "sin"
+                }
               }
             }),
             _vm._v(" "),
@@ -28953,12 +28942,9 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.calc, "cos") },
               on: {
-                change: [
-                  function($event) {
-                    _vm.calc = "cos"
-                  },
-                  _vm.calculate
-                ]
+                change: function($event) {
+                  _vm.calc = "cos"
+                }
               }
             }),
             _vm._v(" "),
@@ -28985,12 +28971,9 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.calc, "tan") },
               on: {
-                change: [
-                  function($event) {
-                    _vm.calc = "tan"
-                  },
-                  _vm.calculate
-                ]
+                change: function($event) {
+                  _vm.calc = "tan"
+                }
               }
             }),
             _vm._v(" "),

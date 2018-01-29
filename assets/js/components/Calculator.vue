@@ -73,7 +73,7 @@
                 let v, o = 0;
 
                 if (this.type === 'deg') {
-                    v = this.input * 180;
+                    v = this.input / 180;
                 } else {
                     v = this.input;
                 }

@@ -16,3 +16,11 @@
   display: block;
 }
 
+.app.wrapper .wrapper.inner calculator {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
